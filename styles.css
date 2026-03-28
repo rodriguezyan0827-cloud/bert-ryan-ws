@@ -31,13 +31,14 @@
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center;;
   background: var(--bg);
   color: var(--text);
-  width: 90%;
-  /* Flexible width for smaller screens */
-  max-width: 1200px;
-  /* Prevents content from getting too wide when zooming out */
-  margin: 0 auto;
+  width: 100%;
+  margin: auto;
   line-height: 1.6;
 }
 
@@ -211,13 +212,14 @@ nav.hidden {
   padding: 1rem;
   position: relative;
   overflow: hidden;
+  background-color: #F2F2F2;
 }
 
 .cards:hover {
-  border: 2px solid black;
+  border: 2px solid var(--accent);
 
   img {
-    border: 2px solid black;
+    border: 2px solid var(--accent);
         box-shadow: 0 4px 6px 4px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
 
   }
@@ -312,11 +314,12 @@ ol li {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-color: #4a79f0;
+  
 }
 
 table {
   border-radius: 12px;
+  border-color: #555555;
 }
 
 th {
@@ -332,7 +335,7 @@ td {
 table,
 th,
 td {
-  border: 1px solid #4a79f0;
+  border: 1px solid #555555;
 }
 
 
@@ -344,24 +347,24 @@ td {
 
 .portfolio-cover img {
   max-width: 900px;
-  margin: 3rem;
+  margin: 1rem 0 3rem 0;
+  border-radius: 0px;
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 
 /* ── DEMO PAGE CONTENT ── */
 .hero {
-  
+  max-width: auto;
   display: flex;
   flex-direction: column;
-  align-items: left;
-  justify-content: left;
-  text-align: left;
-  background: radial-gradient(ellipse 70% 50% at 50% 40%, rgba(200, 169, 110, 0.08) 0%, transparent 70%);
-  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
   flex-direction: column;
-  gap: 1rem;
-  padding: 5rem 2rem;
+  padding: 5rem 15rem 0rem 15rem;
   border-top: 1px solid var(--nav-border);
+  background-color: #c3c3c2;
 }
 
 .hero-eyebrow {
@@ -372,7 +375,12 @@ td {
   color: var(--accent);
 }
 
+.hero-pic-container {
+  display: flex;
+  justify-content: space-between;
+}
 .hero h1 {
+  max-width: 568px;
   font-family: "Montserrat", sans-serif;
   font-size: clamp(3rem, 8vw, 6rem);
   font-weight: 600;
@@ -381,12 +389,22 @@ td {
 }
 
 .hero p {
-  max-width: 480px;
+  max-width: auto;
   font-size: 1.25rem;
   color: var(--muted);
   line-height: 1.6;
 }
-
+.hero-button1 {
+  width: 300px; height: 50px;
+}
+.hero-button2 {
+  width: 300px; height: 50px;
+}
+.hero-btn-container{
+  display: flex;
+  width: 500px; height: 100px;
+  align-items: center;
+}
 .scroll-hint {
   position: absolute;
   bottom: 2.5rem;
@@ -423,27 +441,37 @@ td {
 }
 
 .section {
-  min-height: 100vh;
+  height: 100vh;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  padding: 5rem 2rem;
+  padding: 0rem 2rem;
   border-top: 1px solid var(--nav-border);
+  background-color: #F2F2F2;
+  background-size: cover;
+  background-position: center;
+  margin-top: -2rem;
 }
+
+  
 
 .section h2 {
   font-family: "Montserrat", sans-serif;
   font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: 400;
+  background-color: #F2F2F2;
+  text-align: center;
 }
 
 .section p {
-  max-width: 520px;
-  text-align: center;
+  max-width: 1248px;
   color: var(--muted);
   line-height: 1.8;
+  text-align: center;
+  background-color: #F2F2F2;
 }
 
 .tag {
@@ -614,12 +642,30 @@ footer {
   letter-spacing: 3px;
   text-transform: uppercase;
   border: none;
-  cursor: auto;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+}
+.form-submit2 {
+  background: transparent;
+  color: #0a0a08;
+  padding: 18px 40px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  border: 1px solid var(--accent2);
+  cursor: pointer;
   transition: background 0.3s, transform 0.2s;
   clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
 }
 
 .form-submit:hover {
+  background: var(--accent2);
+  transform: translateY(-2px);
+}
+.form-submit2:hover {
   background: var(--accent2);
   transform: translateY(-2px);
 }
