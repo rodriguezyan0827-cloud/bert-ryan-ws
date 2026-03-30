@@ -212,12 +212,14 @@ nav.hidden {
   padding: 1rem;
   position: relative;
   overflow: hidden;
-  background-color: #F2F2F2;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
 }
 
 .cards:hover {
   border: 2px solid var(--accent);
-
+  background: #F2F2F2;
   img {
     border: 2px solid var(--accent);
         box-shadow: 0 4px 6px 4px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
@@ -266,7 +268,9 @@ ol li {
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: var(--accent);
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
   padding: 20px;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
@@ -450,7 +454,7 @@ td {
   gap: 1rem;
   padding: 0rem 2rem;
   border-top: 1px solid var(--nav-border);
-  background-color: #F2F2F2;
+  background-image: url(images/bg-portfolio\(1\).png);
   background-size: cover;
   background-position: center;
   margin-top: -2rem;
@@ -462,7 +466,9 @@ td {
   font-family: "Montserrat", sans-serif;
   font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: 400;
-  background-color: #F2F2F2;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   text-align: center;
 }
 
@@ -471,7 +477,9 @@ td {
   color: var(--muted);
   line-height: 1.8;
   text-align: center;
-  background-color: #F2F2F2;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
 }
 
 .tag {
